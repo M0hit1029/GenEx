@@ -1,6 +1,11 @@
 from pymongo import MongoClient
 from datetime import datetime
 from bson import ObjectId
+from dotenv import load_dotenv
+import os
+
+# Load .env file
+load_dotenv()
 
 def store_requirements(requirements_list, source_name, project_id, user_id, table_data=None):
     if not isinstance(requirements_list, list) or not all(isinstance(item, dict) for item in requirements_list):
@@ -11,11 +16,16 @@ def store_requirements(requirements_list, source_name, project_id, user_id, tabl
     print(f"Structured requirements count: {len(requirements_list)}")
 
     try:
-        client = MongoClient("mongodb+srv://mohit:P3HedWlBfZ0yYbvy@incarnation.va7fum4.mongodb.net", serverSelectionTimeoutMS=5000)
+        # Load Mongo URI from environment
+        mongo_uri = os.getenv("MONGO_URI")
+        if not mongo_uri:
+            raise EnvironmentError("MONGO_URI not found in environment variables")
+
+        client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
         db = client["Barclays"]
 
         doc = {
-            "projectId": ObjectId(project_id),  # Make sure you're passing this as a string that can be cast to ObjectId
+            "projectId": ObjectId(project_id),
             "userId": ObjectId(user_id),
             "requirements": requirements_list,
             "createdAt": datetime.utcnow(),
@@ -23,7 +33,7 @@ def store_requirements(requirements_list, source_name, project_id, user_id, tabl
         }
 
         # if table_data:
-        #     doc["tables"] = table_data  # Optional: store extra extracted tables if needed
+        #     doc["tables"] = table_data
 
         db.requirements.insert_one(doc)
         print(f"✅ Stored {len(requirements_list)} structured requirement(s) for project {project_id}")
