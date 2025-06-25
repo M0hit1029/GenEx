@@ -2,8 +2,8 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { nanoid } = require('nanoid');
-const User = require('../models/User');
-const Tenant = require('../models/Tenant');
+const User = require('../models/user');
+const Tenant = require('../models/tenant');
 const jwtAuth = require('../middleware/jwtAuth');
 const projectModel = require('../models/project.model');
 
