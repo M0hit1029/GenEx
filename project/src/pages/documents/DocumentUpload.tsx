@@ -273,7 +273,7 @@ const DocumentUpload = () => {
     formData.append('prompt', promptInput.trim() || ''); // Add prompt to FormData
 
     try {
-      const response = await axios.post('http://localhost:5000/extract/upload', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/extract/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
