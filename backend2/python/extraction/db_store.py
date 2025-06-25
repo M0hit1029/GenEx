@@ -11,7 +11,7 @@ def store_requirements(requirements_list, source_name, project_id, user_id, tabl
     print(f"Structured requirements count: {len(requirements_list)}")
 
     try:
-        client = MongoClient("mongodb+srv://lalalala27122:sFlkBEUKqzJm80n1@cluster0.0yelt.mongodb.net/", serverSelectionTimeoutMS=5000)
+        client = MongoClient("mongodb+srv://mohit:P3HedWlBfZ0yYbvy@incarnation.va7fum4.mongodb.net", serverSelectionTimeoutMS=5000)
         db = client["Barclays"]
 
         doc = {

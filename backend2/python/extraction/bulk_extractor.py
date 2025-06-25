@@ -183,7 +183,7 @@ def main():
     file_paths = args.files
     user_id    = args.user_id
     project_id = args.project_id
-    api_key = "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"   # your real key here
+    api_key = "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"   # your real key here
     categorized_data = process_files_by_type(file_paths)
 
     all_requirements = []

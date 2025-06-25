@@ -100,9 +100,7 @@ router.post('/upload', upload.array('files', 10), async (req, res) => {
 
 // Requirements route
 router.post('/requirements', jwtAuth, async (req, res) => {
-  const userId = req.user_id;  // Assuming user_id is in the JWT payload
   const { projectId } = req.body;
-
   console.log(`Received Project ID: ${projectId}`);
 
   if (!projectId) {
@@ -110,9 +108,9 @@ router.post('/requirements', jwtAuth, async (req, res) => {
   }
 
   try {
-    const requirements = await requirementModel.findOne({ projectId });
-
-    if (!requirements) {
+    const requirements = await requirementModel.find({ projectId });
+    console.log(`Found requirements for Project ID ${projectId}:`, requirements);
+    if (!requirements || requirements.length === 0) {
       return res.status(404).send('No requirements found');
     }
 
@@ -125,5 +123,6 @@ router.post('/requirements', jwtAuth, async (req, res) => {
     return res.status(500).send('Something went wrong');
   }
 });
+
 
 module.exports = router;

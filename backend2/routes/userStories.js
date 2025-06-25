@@ -56,8 +56,7 @@ ONLY RETURN the user stories in the exact format specified above. Do not include
 
         return response.data.choices[0].message.content.trim();
     } catch (error) {
-        console.error("Error generating PlantUML code:", error);
-        throw new Error("Failed to generate PlantUML code");
+       console.log(error);
     }
 }
 

@@ -95,8 +95,9 @@ const RequirementEditor = () => {
           
           // Update the requirements in the project context
           if (response.data.requirements) {
-            setRequirementsList([response.data.requirements]);
-            localStorage.setItem('requirements', JSON.stringify([response.data.requirements]));
+            setRequirementsList(response.data.requirements); // no extra []
+localStorage.setItem('requirements', JSON.stringify(response.data.requirements));
+
           }
         } else {
           console.error('Failed to fetch requirements:', response.data);
@@ -416,7 +417,7 @@ const RequirementEditor = () => {
             </thead>
             <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               {filteredRequirements.map((requirement) => (
-                <tr key={requirement.id} className="hover:bg-gray-50 dark:hover:bg-gray-750">
+                <tr key={requirement.id} className="hover:bg-gray-600">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                     {requirement.id}
                   </td>

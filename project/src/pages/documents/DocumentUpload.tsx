@@ -282,13 +282,8 @@ const DocumentUpload = () => {
           console.log(`Overall Upload Progress: ${percentCompleted}%`);
         }
       });
-
       console.log('Backend Response:', response.data);
-      toast({
-        title: 'Processing Success',
-        message: response.data.message || 'Documents processed by backend.',
-        type: 'success',
-      });
+      
     } catch (error) {
       console.log('API Error during document processing:', error);
       let errorMessage = 'An unexpected error occurred.';
@@ -310,7 +305,7 @@ const DocumentUpload = () => {
         type: 'error',
       });
     } finally {
-      
+      navigate('/projects/1/requirements');
       setIsProcessingAll(false);
     }
   };
