@@ -57,7 +57,7 @@ const DocumentUpload = () => {
 
       try {
         const projectname = localStorage.getItem('projectname');
-        const response = await axios.post('http://localhost:5000/auth/getDetails', {
+        const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/getDetails`, {
           name: projectname,
         }, {
           headers: {
