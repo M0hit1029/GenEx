@@ -24,7 +24,7 @@ const NewProject = () => {
     try {
       console.log("IN the context axiosudhshyd");
       const response = await axios.post(
-        'http://localhost:5000/projects/createProject',
+          `${import.meta.env.VITE_API_BASE_URL}/projects/createProject`,
         {
           name,
           description,
