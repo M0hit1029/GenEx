@@ -1,9 +1,9 @@
 
 
-# Genify
+# GenEx
 
-Genify – AI-Powered Requirement Extraction Tool
-Genify is a full-stack web application that automates the extraction and generation of software requirements from diverse document types such as PDF, DOCX, Excel, audio, and video files.
+GenEx – AI-Powered Requirement Extraction Tool
+GenEx is a full-stack web application that automates the extraction and generation of software requirements from diverse document types such as PDF, DOCX, Excel, audio, and video files.
 It combines Natural Language Processing (NLP), Whisper (for transcription), and custom rule-based logic to identify and categorize functional and non-functional requirements.
 
 Key Features:-
