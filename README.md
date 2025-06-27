@@ -26,7 +26,7 @@ To run the project:-
 Tech Stack:
 1. Frontend: React + Vite
 2. Backend: Node.js + Express
-3. Python Engine: FastAPI + PyPDF2 + Whisper + pandas
+3. Python Engine: PyPDF2 + Whisper + pandas and other libraries
 4. Database: MongoDB Atlas
 
 ## 🎥 Demo Video
