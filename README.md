@@ -8,12 +8,11 @@
 
 ## 🔑 Key Features
 
-1. Upload documents (PDF, DOCX, XLSX) or media (audio/video)
-2. AI-powered extraction of clear and structured requirements
-3. Categorization into functional and non-functional requirements
-4. Document versioning, editing, exporting, and collaboration
-5. Role-based access and user management
-6. Integrated AI chat for clarification and requirement Q&A
+1. Upload documents (PDF, DOCX, XLSX) or media (audio/video).
+2. AI-powered extraction of clear and structured requirements.
+3. Categorization into functional and non-functional requirements.
+4. Role-based access and user management.
+5. Visualization of extracted requirements.
 
 ---
 
