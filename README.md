@@ -2,7 +2,7 @@
 
 > 🚀 Built during the **Barclays Hackathon – Hack-O-Hire**
 
-**GenEx** is a full-stack web application that automates the extraction and generation of software requirements from various document types such as **PDF, DOCX, Excel, audio, and video** files. It combines **Natural Language Processing (NLP)**, **Whisper (for transcription)**, and custom rule-based logic to identify and categorize **functional and non-functional requirements**.
+**GenEx** is a full-stack web application that automates the extraction and generation of software requirements from various document types such as **PDF, DOCX, Excel, audio, and video** files. It combines **Natural Language Processing (NLP)**, **Whisper (for transcription)**, and custom rule-based logic to first **extract and categorize** functional and non-functional requirements, and then **assign MoSCoW priorities** to them.
 
 ---
 
